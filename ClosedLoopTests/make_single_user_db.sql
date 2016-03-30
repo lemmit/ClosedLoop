@@ -1,0 +1,1 @@
+﻿alter database TestDb set single_user with rollback immediate

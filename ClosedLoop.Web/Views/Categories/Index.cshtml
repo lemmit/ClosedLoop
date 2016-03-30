@@ -1,0 +1,33 @@
+﻿@using ClosedLoop.Web.Helpers
+@model ClosedLoop.Web.ViewModels.CategoryViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-4 col-md-4">
+            <h2>
+                @Model.Category.Name
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <a class="btn btn-info" href="@UriHelpers.Combine(Url.Content("~"), "Categories", Model.ParentCategoryPathUri)">
+                @(Model.ParentCategoryName)
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-3 col-md-8">
+            @foreach (var item in Model.Category.SubCategories)
+            {
+                <a class="btn btn-default" href="@UriHelpers.Combine(Url.Action("Index", "Categories"), item.Name)">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </a>
+            }
+        </div>
+    </div>
+</div>
