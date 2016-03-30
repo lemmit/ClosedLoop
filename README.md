@@ -3,6 +3,6 @@ Sample ASP.NET MVC project that use url parameters to explore tree-like structur
 Instead of urls like:  
 /Category/NameOfTheCategory  
 we can use:  
-/Category/Category1/SubCategory1.1/SubSubCategory2.1/SubSubCategory2  
+/Category/Category1/SubCategory/SubSubCategory/SubSubSubCategory
 
 It can be useful for integration with user-tracking software (e.g. Google Analytics) & Content Loop Marketing.
